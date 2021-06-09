@@ -1,0 +1,101 @@
+
+@import '../../../assets/scss/abstracts/variables';
+@import '../../../assets/scss/abstracts/functions';
+@import '../../../assets/scss/abstracts/keyframes';
+
+
+.wrapper{
+    &__filter_list{
+        border-radius: 16px;
+        padding: 1.5rem;
+        
+        img{
+            transition: .5s;
+        }
+    }
+
+    &__search{
+        border: 1px solid #E0E0E0;
+        border-radius: 8px;
+        padding: 15px 12px;
+        width: 100%;
+
+        input{
+            border: none;
+            background-color: transparent;
+            outline-style: none;
+            width: 100%;
+        }
+    }
+    
+    &__list{
+        max-height: 0;
+        transition: .5s;
+        opacity: 0;
+        visibility: hidden;
+        
+        ul{
+            transition: .5s;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            
+            li{
+                margin-bottom: 10px;
+                input{
+                    &[type='radio']{
+                        &:checked {
+                            ~.circle{
+                                border: 1px solid color('blue');
+                                position: relative;
+                                
+                                &::after{
+                                    content: "";
+                                    opacity: 1;
+                                }
+                                
+                            }
+
+                            ~label{
+                                color: color('blue') !important;
+                            }
+                        }
+                    }
+                }
+                
+                .circle{
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%;
+                    border: 1px solid color('gray-1');
+                    display: inline-block;
+                    transition: .5s;
+                    
+                    &::after{
+                        transition: .5s;
+                        opacity: 0;
+                        content: "";
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background-color:  color('blue');
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.rotate{
+    transform: rotate(-180deg);
+}
+
+.list__active{
+    max-height: 100vh;
+    visibility: visible;
+    opacity: 1;
+}

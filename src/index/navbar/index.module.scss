@@ -1,0 +1,99 @@
+@import '../../assets/scss/abstracts/variables';
+@import '../../assets/scss/abstracts/functions';
+@import '../../assets/scss/abstracts/keyframes';
+
+.navbar{
+    &__wrap{
+        padding: 1rem 0;
+    }
+    
+    &__brand{
+        a{
+            display: inline-block;
+        }        
+    }
+    
+    &__menu{
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            
+            li{
+                display: inline-block;
+                margin-right: 15px;
+                vertical-align: middle;
+                
+                &:last-child{
+                    margin-right: 0;
+                }
+                
+                a{
+                    display: inline-block;
+                    padding: 9px 0;
+                    border-radius: 50px;
+                    width: 116px;
+                    text-align: center;
+
+                    &.active{
+                        background-color: transparentize(color('blue'), .95);
+                        color:color('blue') !important;
+                    }
+
+                    &.profile{
+                        padding: 0;
+                        padding-left: 10px;
+                        width: initial;
+                        img{
+                            width: 44px;
+                            height: 44px;
+                            object-fit: cover;
+                            border-radius: 50%;
+                            overflow: hidden;
+                        }
+                    }
+
+                    &.create{
+                        transition: .5s;
+
+                        &:hover{
+                            box-shadow:0 15px 30px transparentize(color('blue'), .5) !important;
+                        }
+                    }
+
+                    .notice{
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.form__search{
+    padding: 8px 24px;
+    border-radius: 50px;
+    
+    input{
+        border: none;
+        background-color: transparent;
+        outline-style: none;
+        
+        &::-webkit-input-placeholder { 
+            font-style: italic;
+            color:color('gray-1');
+        }
+        
+        &:-ms-input-placeholder { 
+            font-style: italic;
+            color:color('gray-1');
+        }
+        
+        &::placeholder {
+            font-style: italic;
+            color:color('gray-1');
+        }
+    }
+}
